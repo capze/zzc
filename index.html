@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>MediaPipe 表情辨識</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <h1>MediaPipe 表情辨識</h1>
+    <p>請允許使用相機，並對著鏡頭做表情。系統會根據偵測到的表情給予語音回饋。</p>
+
+    <div class="video-card">
+      <video id="inputVideo" autoplay muted playsinline></video>
+      <canvas id="outputCanvas"></canvas>
+    </div>
+
+    <div class="status-panel">
+      <div class="status-item"><strong>目前表情：</strong><span id="expressionLabel">等待偵測中...</span></div>
+      <div class="status-item"><strong>語音狀態：</strong><span id="speechStatus">尚未開始</span></div>
+    </div>
+
+    <button id="startButton">啟動相機</button>
+    <div class="hint">建議使用手機瀏覽器開啟，並允許前鏡頭使用權限。</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
